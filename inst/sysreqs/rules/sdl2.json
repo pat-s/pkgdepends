@@ -1,8 +1,12 @@
 {
-  "patterns": ["\\bicu4c\\b"],
+  "patterns": [
+    "\\bsdl2\\b"
+  ],
   "dependencies": [
     {
-      "packages": ["libicu-dev"],
+      "packages": [
+        "libsdl2-dev"
+      ],
       "constraints": [
         {
           "os": "linux",
@@ -15,12 +19,10 @@
       ]
     },
     {
-      "packages": ["libicu-devel"],
+      "packages": [
+        "SDL2-devel"
+      ],
       "constraints": [
-        {
-          "os": "linux",
-          "distribution": "centos"
-        },
         {
           "os": "linux",
           "distribution": "rockylinux"
@@ -32,51 +34,62 @@
         {
           "os": "linux",
           "distribution": "fedora"
-        }
-      ]
-    },
-    {
-      "packages": ["libicu"],
-      "constraints": [
-        {
-          "os": "linux",
-          "distribution": "redhat",
-          "versions": ["6"]
-        }
-      ]
-    },
-    {
-      "packages": ["libicu-devel"],
-      "constraints": [
-        {
-          "os": "linux",
-          "distribution": "opensuse",
-          "versions": ["42.3", "15.0", "15.2"]
         },
         {
           "os": "linux",
-          "distribution": "sle",
-          "versions": ["12.3", "15.0", "15.2"]
+          "distribution": "sle"
         }
       ]
     },
     {
-      "packages": ["icu.691-devel"],
+      "pre_install": [
+        {
+          "command": "yum install -y epel-release"
+        }
+      ],
+      "packages": [
+        "SDL2-devel"
+      ],
       "constraints": [
         {
           "os": "linux",
-          "distribution": "opensuse",
-          "versions": ["15.3", "15.4", "15.5"]
-        },
-        {
-          "os": "linux",
-          "distribution": "sle",
-          "versions": ["15.3", "15.4", "15.5"]
+          "distribution": "centos",
+          "versions": [
+            "6",
+            "7"
+          ]
         }
       ]
     },
     {
-      "packages": ["libicu73_2-devel"],
+      "pre_install": [
+        {
+          "command": "dnf install -y dnf-plugins-core"
+        },
+        {
+          "command": "dnf config-manager --set-enabled powertools"
+        },
+        {
+          "command": "dnf install -y epel-release"
+        }
+      ],
+      "packages": [
+        "SDL2-devel"
+      ],
+      "constraints": [
+        {
+          "os": "linux",
+          "distribution": "centos",
+          "versions": [
+            "8"
+          ]
+        }
+      ]
+    },
+    {
+      "packages": [
+        "SDL2-devel"
+      ],
       "constraints": [
         {
           "os": "linux",
@@ -92,17 +105,25 @@
     },
     {
       "packages": [
-        "mingw-w64-x86_64-icu",
-        "mingw-w64-i686-icu"
+        "libSDL2-devel"
       ],
       "constraints": [
         {
-          "os": "windows"
+          "os": "linux",
+          "distribution": "opensuse",
+          "versions": ["15.0", "15.2", "15.3", "15.4", "15.5"]
+        },
+        {
+          "os": "linux",
+          "distribution": "sle",
+          "versions": ["15.0", "15.2", "15.3", "15.4", "15.5"]
         }
       ]
     },
     {
-      "packages": ["icu-dev"],
+      "packages": [
+        "sdl2-dev"
+      ],
       "constraints": [
         {
           "os": "linux",

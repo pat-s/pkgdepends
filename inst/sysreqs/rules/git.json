@@ -51,6 +51,15 @@
             "distribution": "alpine"
           }
         ]
+      },
+      {
+        "packages": ["git"],
+        "constraints": [
+          {
+            "os": "linux",
+            "distribution": "alpine"
+          }
+        ]
       }
     ]
-  }
+}

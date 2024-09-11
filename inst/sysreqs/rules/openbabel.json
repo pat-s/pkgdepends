@@ -1,8 +1,8 @@
 {
-  "patterns": ["\\bcmake\\b"],
+  "patterns": ["\\bopenbabel\\b"],
   "dependencies": [
     {
-      "packages": ["cmake"],
+      "packages": ["libopenbabel-dev"],
       "constraints": [
         {
           "os": "linux",
@@ -15,34 +15,24 @@
       ]
     },
     {
-      "packages": ["cmake"],
+      "packages": ["openbabel-devel"],
       "constraints": [
-        {
-          "os": "linux",
-          "distribution": "centos",
-          "versions": ["8"]
-        },
-        {
-          "os": "linux",
-          "distribution": "rockylinux"
-        },
-        {
-          "os": "linux",
-          "distribution": "redhat",
-          "versions": ["8", "9"]
-        },
         {
           "os": "linux",
           "distribution": "fedora"
         },
         {
           "os": "linux",
-          "distribution": "alpine"
+          "distribution": "opensuse"
+        },
+        {
+          "os": "linux",
+          "distribution": "sle"
         }
       ]
     },
     {
-      "packages": ["cmake", "cmake3"],
+      "packages": ["openbabel-devel"],
       "pre_install": [
         {
           "command": "yum install -y epel-release"
@@ -57,7 +47,7 @@
       ]
     },
     {
-      "packages": ["cmake", "cmake3"],
+      "packages": ["openbabel-devel"],
       "pre_install": [
         {
           "command": "rpm -q epel-release || yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
@@ -72,24 +62,45 @@
       ]
     },
     {
-      "packages": ["cmake"],
+      "packages": ["openbabel-devel"],
+      "pre_install": [
+        { "command": "dnf install -y epel-release" }
+      ],
       "constraints": [
         {
           "os": "linux",
-          "distribution": "opensuse"
+          "distribution": "centos",
+          "versions": ["8"]
         },
         {
           "os": "linux",
-          "distribution": "sle"
+          "distribution": "rockylinux"
         }
       ]
     },
     {
-      "packages": ["cmake"],
+      "packages": ["openbabel-devel"],
+      "pre_install": [
+        { "command": "dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm" }
+      ],
       "constraints": [
         {
           "os": "linux",
-          "distribution": "alpine"
+          "distribution": "redhat",
+          "versions": ["8"]
+        }
+      ]
+    },
+    {
+      "packages": ["openbabel-devel"],
+      "pre_install": [
+        { "command": "dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm" }
+      ],
+      "constraints": [
+        {
+          "os": "linux",
+          "distribution": "redhat",
+          "versions": ["9"]
         }
       ]
     }

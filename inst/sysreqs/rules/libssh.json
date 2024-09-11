@@ -1,8 +1,8 @@
 {
-  "patterns": ["\\bredland\\b", "\\blibrdf0\\b"],
+  "patterns": ["\\blibssh\\b"],
   "dependencies": [
     {
-      "packages": ["librdf0-dev"],
+      "packages": ["libssh-dev"],
       "constraints": [
         {
           "os": "linux",
@@ -15,13 +15,8 @@
       ]
     },
     {
-      "packages": ["redland-devel"],
+      "packages": ["libssh-devel"],
       "constraints": [
-        {
-          "os": "linux",
-          "distribution": "centos",
-          "versions": ["6", "7"]
-        },
         {
           "os": "linux",
           "distribution": "fedora"
@@ -29,24 +24,19 @@
       ]
     },
     {
-      "packages": ["redland-devel"],
-      "pre_install": [
-        { "command": "dnf install -y dnf-plugins-core" },
-        { "command": "dnf config-manager --set-enabled powertools" }
-      ],
+      "packages": ["libssh-devel"],
       "constraints": [
         {
           "os": "linux",
           "distribution": "centos",
-          "versions": ["8"]
+          "versions": ["6", "7"]
         }
       ]
     },
     {
-      "packages": ["redland-devel"],
+      "packages": ["libssh-devel"],
       "pre_install": [
-        { "command": "dnf install -y dnf-plugins-core" },
-        { "command": "dnf config-manager --set-enabled crb" }
+        { "command": "dnf install -y epel-release" }
       ],
       "constraints": [
         {
@@ -56,18 +46,19 @@
       ]
     },
     {
-      "packages": ["redland"],
+      "packages": ["libssh"],
       "constraints": [
         {
           "os": "linux",
-          "distribution": "redhat"
+          "distribution": "redhat",
+          "versions": ["7", "8"]
         }
       ]
     },
     {
-      "packages": ["redland-devel"],
+      "packages": ["libssh-devel"],
       "pre_install": [
-        { "command": "subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms" }
+        { "command": "dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm" }
       ],
       "constraints": [
         {
@@ -78,7 +69,7 @@
       ]
     },
     {
-      "packages": ["libredland-devel"],
+      "packages": ["libssh-devel"],
       "constraints": [
         {
           "os": "linux",
@@ -86,13 +77,12 @@
         },
         {
           "os": "linux",
-          "distribution": "sle",
-          "versions": ["12.3"]
+          "distribution": "sle"
         }
       ]
     },
     {
-      "packages": ["redland-dev"],
+      "packages": ["libssh-dev"],
       "constraints": [
         {
           "os": "linux",
@@ -102,21 +92,12 @@
     },
     {
       "packages": [
-        "mingw-w64-x86_64-redland",
-        "mingw-w64-i686-redland"
+        "mingw-w64-x86_64-libssh",
+        "mingw-w64-i686-libssh"
       ],
       "constraints": [
         {
           "os": "windows"
-        }
-      ]
-    },
-    {
-      "packages": ["redland-dev"],
-      "constraints": [
-        {
-          "os": "linux",
-          "distribution": "alpine"
         }
       ]
     }

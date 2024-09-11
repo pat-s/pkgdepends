@@ -92,11 +92,22 @@
         ]
       },
       {
+        "packages": ["pandoc"],
+        "constraints": [
+          {
+            "os": "linux",
+            "distribution": "alpine",
+            "versions": ["3.17"]
+          }
+        ]
+      },
+      {
         "packages": ["pandoc-cli"],
         "constraints": [
           {
             "os": "linux",
-            "distribution": "alpine"
+            "distribution": "alpine",
+            "versions": ["3.18"]
           }
         ]
       }

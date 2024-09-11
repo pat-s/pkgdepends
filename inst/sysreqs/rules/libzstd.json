@@ -1,8 +1,8 @@
 {
-    "patterns": ["\\bpython\\b"],
+    "patterns": ["\\blibzstd\\b"],
     "dependencies": [
       {
-        "packages": ["python3"],
+        "packages": ["libzstd-dev"],
         "constraints": [
           {
             "os": "linux",
@@ -11,45 +11,41 @@
           {
             "os": "linux",
             "distribution": "debian"
-          },
-          {
-            "os": "linux",
-            "distribution": "alpine"
           }
         ]
       },
       {
-        "packages": ["python"],
+        "pre_install": [
+          {
+            "command": "rpm -q epel-release || yum install -y epel-release"
+          }
+        ],
+        "packages": [ "libzstd-devel" ],
         "constraints": [
           {
             "os": "linux",
             "distribution": "centos",
-            "versions": ["6", "7"]
-          },
-          {
-            "os": "linux",
-            "distribution": "redhat",
-            "versions": ["6", "7"]
+            "versions": [ "7"]
           }
         ]
       },
       {
-        "packages": ["python2"],
+        "packages": ["libzstd-devel"],
+        "pre_install": [
+          {
+            "command": "rpm -q epel-release || yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+          }
+        ],
         "constraints": [
           {
             "os": "linux",
-            "distribution": "centos",
-            "versions": ["8"]
-          },
-          {
-            "os": "linux",
             "distribution": "redhat",
-            "versions": ["8"]
+            "versions": ["7"]
           }
         ]
       },
       {
-        "packages": ["python3"],
+        "packages": ["libzstd-devel"],
         "constraints": [
           {
             "os": "linux",
@@ -58,17 +54,12 @@
           {
             "os": "linux",
             "distribution": "redhat",
-            "versions": ["9"]
+	    "versions": [ "8", "9" ]
           },
           {
             "os": "linux",
             "distribution": "fedora"
-          }
-        ]
-      },
-      {
-        "packages": ["python"],
-        "constraints": [
+          },
           {
             "os": "linux",
             "distribution": "opensuse"
@@ -80,7 +71,7 @@
         ]
       },
       {
-        "packages": ["python3"],
+        "packages": ["zstd-dev"],
         "constraints": [
           {
             "os": "linux",
@@ -89,4 +80,4 @@
         ]
       }
     ]
-  }
+}

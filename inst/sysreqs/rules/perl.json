@@ -51,6 +51,15 @@
             "distribution": "alpine"
           }
         ]
+      },
+      {
+        "packages": ["perl"],
+        "constraints": [
+          {
+            "os": "linux",
+            "distribution": "alpine"
+          }
+        ]
       }
     ]
   }

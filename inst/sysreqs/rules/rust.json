@@ -89,6 +89,15 @@
           "distribution": "alpine"
         }
       ]
+    },
+    {
+      "packages": ["rust", "cargo"],
+      "constraints": [
+        {
+          "os": "linux",
+          "distribution": "alpine"
+        }
+      ]
     }
   ]
 }

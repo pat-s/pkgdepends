@@ -1,8 +1,8 @@
 {
-  "patterns": ["\\bapparmor\\b", "\\blibapparmor\\b"],
+  "patterns": ["\\bflint\\b"],
   "dependencies": [
     {
-      "packages": ["libapparmor-dev"],
+      "packages": ["libflint-dev"],
       "constraints": [
         {
           "os": "linux",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "packages": ["libapparmor-devel"],
+      "packages": ["flint-devel"],
       "constraints": [
         {
           "os": "linux",
@@ -23,16 +23,7 @@
         },
         {
           "os": "linux",
-          "distribution": "sle"
-        }
-      ]
-    },
-    {
-      "packages": ["libapparmor-dev", "libapparmor"],
-      "constraints": [
-        {
-          "os": "linux",
-          "distribution": "alpine"
+          "distribution": "fedora"
         }
       ]
     }

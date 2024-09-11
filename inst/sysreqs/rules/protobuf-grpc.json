@@ -1,8 +1,8 @@
 {
-  "patterns": ["\\blibgsl\\b", "\\bgsl\\b", "\\bgnu scientific library\\b"],
+  "patterns": ["\\bgrpc/protobuf\\b"],
   "dependencies": [
     {
-      "packages": ["libgsl0-dev"],
+      "packages": ["protobuf-compiler-grpc"],
       "constraints": [
         {
           "os": "linux",
@@ -15,51 +15,31 @@
       ]
     },
     {
-      "packages": ["gsl-devel"],
+      "packages": ["grpc-plugins"],
       "constraints": [
-        {
-          "os": "linux",
-          "distribution": "centos"
-        },
         {
           "os": "linux",
           "distribution": "fedora"
-        },
-        {
-          "os": "linux",
-          "distribution": "redhat",
-          "versions": ["7", "8"]
         }
       ]
     },
     {
-      "packages": ["gsl-devel"],
       "pre_install": [
+        { "command": "yum install -y epel-release" },
         { "command": "dnf install -y dnf-plugins-core" },
         { "command": "dnf config-manager --set-enabled crb" }
       ],
+      "packages": ["grpc-plugins"],
       "constraints": [
         {
           "os": "linux",
-          "distribution": "rockylinux"
-        }
-      ]
-    },
-    {
-      "packages": ["gsl-devel"],
-      "pre_install": [
-        { "command": "subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms" }
-      ],
-      "constraints": [
-        {
-          "os": "linux",
-          "distribution": "redhat",
+          "distribution": "rockylinux",
           "versions": ["9"]
         }
       ]
     },
     {
-      "packages": ["gsl-devel"],
+      "packages": ["grpc-devel"],
       "constraints": [
         {
           "os": "linux",
@@ -72,31 +52,35 @@
       ]
     },
     {
-      "packages": ["gsl-dev"],
-      "constraints": [
-        {
-          "os": "linux",
-          "distribution": "alpine"
-        }
-      ]
-    },
-    {
-      "packages": [
-        "mingw-w64-x86_64-gsl",
-        "mingw-w64-i686-gsl"
+      "packages": ["grpc-plugins"],
+      "pre_install": [
+        { "command": "subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms" }
       ],
       "constraints": [
         {
-          "os": "windows"
+          "os": "linux",
+          "distribution": "redhat",
+          "versions": ["9"]
         }
       ]
     },
     {
-      "packages": ["gsl-dev"],
+      "packages": ["grpc-plugins"],
       "constraints": [
         {
           "os": "linux",
-          "distribution": "alpine"
+          "distribution": "alpine",
+          "versions": ["3.17", "3.18", "3.19", "3.20", "edge"]
+        }
+      ]
+    },
+    {
+      "packages": ["grpc-dev"],
+      "constraints": [
+        {
+          "os": "linux",
+          "distribution": "alpine",
+          "versions": ["3.16"]
         }
       ]
     }

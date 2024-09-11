@@ -51,6 +51,15 @@
           "distribution": "sle"
         }
       ]
+    },
+    {
+      "packages": ["texlive"],
+      "constraints": [
+        {
+          "os": "linux",
+          "distribution": "alpine"
+        }
+      ]
     }
   ]
 }
